@@ -2,21 +2,17 @@
 #         returns a new list containing the squares of only the even numbers from the original list. For example, 
 #         if the input is [1, 2, 3, 4, 5, 6], the function should return [4, 16, 36].
 
-print("Enter a list of numbers:")
+# User input with error handling for non-integer inputs
+while (True):
+    print("Enter a list of numbers:")
+    user_input = input()
 
-user_input = input()
-list1 = []
-# list1 = eval(user_input)      # Simple evaluation of input
-
-# removing all unnecessary characters that are not numbers from input
-for i in user_input:
     try:
-        num = int(i)
-        list1.append(num)
-    except ValueError:
-        continue
-    
-# print(list1)      # test line
+        list1 = eval(user_input)
+        break
+    except NameError:
+        print("Your list is contains non-integer values. Please try again")
+        print()
 
 # making a new list to store all the even squares
 list2 = []
