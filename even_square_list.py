@@ -1,3 +1,7 @@
+# Task 2: List Comprehension Write a Python function called even_square_list.py that takes a list of integers as input and
+#         returns a new list containing the squares of only the even numbers from the original list. For example, 
+#         if the input is [1, 2, 3, 4, 5, 6], the function should return [4, 16, 36].
+
 print("Enter a list of numbers:")
 
 user_input = input()
