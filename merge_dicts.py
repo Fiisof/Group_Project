@@ -1,27 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
-# list comprehension write a python function called '' that takes list of integers as input and returns a new list
-# containing the squares of only even numbers from the original list. For example, if the input is [1,2,3,4,5,6],
-# the function should return [4,16,36]
-
-
-# In[24]:
-
-
-list_int = [1,2,3,4,5,6]
-list_sqr = []
-
-for i in range(len(list_int)):
-    if list_int[i]%2==0:
-        list_sqr = list_sqr + [list_int[i]*list_int[i]]
-        
-print(list_sqr)
-
-
 # In[25]:
 
 
@@ -30,7 +9,9 @@ print(list_sqr)
 # should overwrite the value from the first dictionary
 
 
-# In[33]:
+# ## Hardcoded Version
+
+# In[14]:
 
 
 def Merge(dict1, dict2):
@@ -44,27 +25,40 @@ Merge(dict1,dict2)
 print(dict1)
 
 
-# In[ ]:
+# ## Accepts User Inputs
+
+# In[12]:
 
 
-# Tuple Sum: Write a python script called ' ' that takes a tuple of integers as input ans returns the sum of all the
-# elements in the tuple. For example, if the input is (1,2,3,4,5), the function should return 15.
+def Merge(dictA, dictB):
+    return(dictA.update(dictB))
 
+print('Please enter the number of values for the first dictionary')
+n = input()
+m = input()
+n = int(n)
+m = int(m)
 
-# In[ ]:
+dictA = {}
+dictB = {}
+def inputDictA(n,m):
+    dictA = {}
+    dictB = {}
+    for i in range(n):
+        key = input("Key for the dictionary: ")
+        value = input("Value binded to the key: ")
+        dictA[key] = value
+        
+    for i in range(m):
+        key = input("Key for the dictionary: ")
+        value = input("Value binded to the key: ")
+        dictB[key] = value
+        
+#     print("DictA:", dictA)
+#     print("DictB:", dictB)
 
+    Merge(dictA,dictB)
+    print("Merged dictionaries:",dictA)
 
-def tupleSum(t):
-    return sum(t) 
-
-print('Enter integers separated by a comma ",".')
-user_input = input()
-tup1 = eval(user_input)
-
-print('Your tuple is:')
-print(tup1)
-
-tuplesum = tupleSum(tup1)
-print('The sum of your tuple is:')
-print(tuplesum)
+inputDictA(n,m)
 
